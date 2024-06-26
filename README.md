@@ -2,7 +2,7 @@
 
 ## 🚀 Descrição
 
-Site discord bem interativo com particulas criado para colocar suas redes sociais e de mais um amigo seu ! 
+Site Discord 
 
  <img src="https://i.ibb.co/F8m9WTz/Capture.jpg" width="800" /> 
 
