@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/imgs/icon.png">
+    
+    <!-- Título -->
+    <title>LUV</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/3458439583409583094580/3458439583409583094580.css">
+
+    <!-- Fontes -->
+    <link href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css" rel="stylesheet">
+    
+    <!-- Música -->
+    <audio id="backgroundMusic" loop>
+        <source src="assets/msc.mp3" type="audio/mp3">
+        Seu navegador não suporta áudio HTML5.
+    </audio>
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Configuração do Particles.js
+            particlesJS("particles-js", {
+          "particles": {
+            "number": {
+              "value": 30,
+              "density": {
+                "enable": true,
+                "value_area": 800
+              }
+            },
+            "color": {
+              "value": "#ffffff"
+            },
+            "shape": {
+              "type": "image",
+              "image": {
+                "src": "https://cdn.discordapp.com/emojis/998607318893723798.webp?size=96&amp;quality=lossless",
+                "width": 100,
+                "height": 100
+              }
+            },
+            "opacity": {
+              "value": 0.5,
+              "random": false,
+              "anim": {
+                "enable": false,
+                "speed": 1,
+                "opacity_min": 0.1,
+                "sync": false
+              }
+            },
+            "size": {
+              "value": 12,
+              "random": true,
+              "anim": {
+                "enable": false,
+                "speed": 3,
+                "size_min": 0.1,
+                "sync": false
+              }
+            },
+            "line_linked": {
+              "enable": false,
+            },
+            "move": {
+              "enable": true,
+              "speed": 2,
+              "direction": "bottom",
+              "random": true,
+              "straight": false,
+              "out_mode": "out",
+              "bounce": false,
+              "attract": {
+                "enable": false,
+                "rotateX": 600,
+                "rotateY": 1200
+              }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+        }
+    });
+
+            
+            const titles = ["webamor.xyz", "miguel & gabi", "LUV"];
+            let titleIndex = 0;
+
+            function changeTitle() {
+                document.title = titles[titleIndex];
+                titleIndex = (titleIndex + 1) % titles.length;
+            }
+
+            setInterval(changeTitle, 1000); // 
+
+            tippy('.primeira-imagem', {
+                content: "Boost Nível 2",
+                animation: 'fade'
+            });
+            tippy('.segunda-imagem', {
+                content: "Nitro",
+                animation: 'fade'
+            });
+            tippy('.terceira-imagem', {
+                content: "Completou uma Missão",
+                animation: 'fade'
+            });
+
+            const overlay = document.querySelector('#overlay');
+            const showProfileBtn = document.querySelector('.show-profile-btn');
+            const backgroundMusic = document.getElementById('backgroundMusic');
+            const pauseMusicBtn = document.querySelector('#pauseMusicBtn');
+
+            showProfileBtn.addEventListener('click', function () {
+                overlay.classList.toggle('show');
+
+                const profiles = document.querySelectorAll('.profile');
+                profiles.forEach(profile => {
+                    profile.style.display = overlay.classList.contains('show') ? 'block' : 'none';
+                });
+
+                showProfileBtn.style.display = overlay.classList.contains('show') ? 'none' : 'block';
+                pauseMusicBtn.style.display = overlay.classList.contains('show') ? 'block' : 'none';
+
+                if (overlay.classList.contains('show')) {
+                    backgroundMusic.play();
+                } else {
+                    backgroundMusic.pause();
+                }
+            });
+
+            pauseMusicBtn.addEventListener('click', function () {
+                if (backgroundMusic.paused) {
+                    backgroundMusic.play();
+                    pauseMusicBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                } else {
+                    backgroundMusic.pause();
+                    pauseMusicBtn.innerHTML = '<i class="fas fa-play"></i>';
+                }
+            });
+
+            
+            VanillaTilt.init(document.querySelectorAll('.profile-box img'), {
+                max: 35,
+                speed: 500
+            });
+
+            
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            });
+
+            
+            document.addEventListener('keydown', function(event) {
+                if (event.ctrlKey && event.shiftKey && event.key === 'I') {
+                    event.preventDefault();
+                }
+            });
+
+            
+            document.addEventListener('selectstart', function(event) {
+                event.preventDefault();
+            });
+
+            
+            document.addEventListener('keydown', function(event) {
+                if (event.ctrlKey && event.key === 'u') {
+                    event.preventDefault();
+                }
+            });
+
+            
+            document.addEventListener('keydown', function(event) {
+                if (event.key.startsWith('F') && !isNaN(parseInt(event.key.slice(1)))) {
+                    event.preventDefault();
+                }
+            });
+
+            // Bloquear o console
+            document.onkeydown = function(event) {
+                if (
+                    event.keyCode == 123 || // F12
+                    (event.ctrlKey && event.shiftKey && event.keyCode == 73) || // Ctrl+Shift+I
+                    (event.ctrlKey && event.keyCode == 85) // Ctrl+U
+                ) {
+                    return false;
+                }
+            };
+
+            // Detectar DevTools aberto e fechar a aba
+            (function() {
+                const devtools = {
+                    open: false,
+                    orientation: null
+                };
+                const threshold = 160;
+                const emitEvent = (state, orientation) => {
+                    window.dispatchEvent(new CustomEvent('devtoolschange', {
+                        detail: {
+                            open: state,
+                            orientation: orientation
+                        }
+                    }));
+                };
+
+                const main = ({ emitEvents = true } = {}) => {
+                    const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+                    const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+                    const orientation = widthThreshold ? 'vertical' : 'horizontal';
+
+                    if (
+                        !(heightThreshold && widthThreshold) &&
+                        ((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)
+                    ) {
+                        if ((!devtools.open || devtools.orientation !== orientation) && emitEvents) {
+                            emitEvent(true, orientation);
+                        }
+                        devtools.open = true;
+                        devtools.orientation = orientation;
+                    } else {
+                        if (devtools.open && emitEvents) {
+                            emitEvent(false, null);
+                        }
+                        devtools.open = false;
+                        devtools.orientation = null;
+                    }
+                };
+
+                main({ emitEvents: false });
+                setInterval(main, 500);
+
+                window.addEventListener('devtoolschange', event => {
+                    if (event.detail.open) {
+                        window.close();
+                    }
+                });
+            })();
+        });
+    </script>
+
+    <style>
+        
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background-color: #000000; 
+        }
+
+        .show-profile-btn:hover {
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+        #pauseMusicBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 9999;
+        }
+        #pauseMusicBtn i {
+            font-size: 30px;
+            color: #a6a8b8;
+            transition: color 0.3s ease;
+        }
+        #pauseMusicBtn i:hover {
+            color: white;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .social-icon {
+            font-size: 25px; 
+            margin: 0 5px;
+            color: #993399;
+            transition: color 0.3s ease;
+        }
+        .social-icon:hover {
+            color: white;
+        }
+        .primeira-imagem, .segunda-imagem {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .primeira-imagem::before, .segunda-imagem::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%; 
+            width: 200%; 
+            height: 100%;
+            background-color: white; 
+            animation: slide 5s linear infinite; 
+        }
+
+        @keyframes slide {
+            0% { left: -100%; } 
+            100% { left: 100%; } 
+        }
+
+        
+        .profile-box img {
+            transition: transform 0.3s ease, border 0.0s ease;
+        }
+
+        .profile-box img:hover {
+            transform: scale(1.1); /* 
+            border: 2px solid purple; 
+            z-index: 10; /* */
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <header>
+        <nav>
+            <div class="header_logo">
+                
+            </div>
+            <div class="header_links">
+                <ul class="nav_links">
+                    
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Corações -->
+    <div id="overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        <button class="show-profile-btn" style="font-size: 40px; background: none; border: none; cursor: pointer;">
+            <img src="assets/heart.gif" alt="Heart GIF" style="width: 120px; height: 120px;">
+        </button>
+    </div>
+
+    <section class="main">
+        <!-- Perfis -->
+        <div class="profile-container">
+            <div class="profile" style="display: none;">
+                <div class="profile-box">
+                    <img src="assets/imgs/a1m.jpg" alt="Foto de Perfil" title="">
+                </div>
+                <span>a1mleg</span>
+                <!-- Fotos -->
+                <div class="profile-photos">
+                    <img src="assets/imgs/nitro2.gif" alt="Badge Icon" class="rounded-photo segunda-imagem">
+                    <img src="assets/imgs/3.png" alt="Badge Icon" class="rounded-photo primeira-imagem">
+                    <img src="assets/imgs/2.png" alt="Badge Icon" class="rounded-photo terceira-imagem">
+                </div>
+                <!-- Redes Sociais -->
+                <div class="social-icons">
+                    <a target="_blank" href="https://discord.com/users/497843222245146651"><i class="fab fa-discord social-icon"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/miguelx14_/"><i class="fab fa-instagram social-icon"></i></a>
+                </div>
+            </div>
+
+            
+            <div class="profile" style="display: none;">
+                <div class="profile-box">
+                    <img src="assets/imgs/gabi.jpg" alt="Foto de Perfil" class="rounded-photo">
+                </div>
+                <span>gabi</span>
+                <!-- Fotos -->
+                <div class="profile-photos">
+                    <img src="assets/imgs/nitro2.gif" alt="Badge Icon" class="rounded-photo segunda-imagem">
+                    <img src="assets/imgs/3.png" alt="Badge Icon" class="rounded-photo primeira-imagem">
+                    <img src="assets/imgs/2.png" alt="Badge Icon" class="rounded-photo terceira-imagem">
+                </div>
+                <!-- Redes Sociais -->
+                <div class="social-icons">
+                    <a target="_blank" href="https://discord.com/users/530148034038988811"><i class="fab fa-discord social-icon"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/bybcryx/"><i class="fab fa-instagram social-icon"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <button id="pauseMusicBtn"><i class="fas fa-pause"></i></button>
+
+</body>
+</html>
