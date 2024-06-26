@@ -1,13 +1,26 @@
-Este é um projeto de um site para amigos.
+# Site Discord
 
-Pré-requisitos
+## 🚀 Descrição
+
+Site discord bem interativo com particulas criado para colocar suas redes sociais e de mais um amigo seu ! 
+
+
+### 📋 Pré-requisitos
+
 Visual Studio Code
 
 
-Contribuições e sugestões são sempre bem-vindas! Sinta-se à vontade para enviar um pull request ou abrir uma issue com sugestões de novas funcionalidades ou melhorias no código existente.
+### 🔧 Instalação
+
+Faça o download ou clone o repositório.
+Abra o arquivo index.html no seu navegador.
+Edite como quiser.
 
 
+## 🛠️ Construído com
 
-*Observação*
-É necessário baixar uma música, renomeá-la para "msc.mp3" e adicioná-la ao diretório "index.html/" para que possa reproduzi-la corretamente.
 
+* [Particles.js](https://github.com/VincentGarreau/particles.js) - Biblioteca de animações de partículas
+* [Tippy.js](https://github.com/atomiks/tippyjs) - Biblioteca de tooltips.
+* [VanillaTilt.js](https://micku7zu.github.io/vanilla-tilt.js/) - Biblioteca de efeitos de inclinação.
+* [Font Awesome](https://github.com/FortAwesome/Font-Awesome) - Biblioteca de ícones.
