@@ -13,7 +13,9 @@ Visual Studio Code
 ### 🔧 Instalação
 
 Faça o download ou clone o repositório.
+
 Abra o arquivo index.html no seu navegador.
+
 Edite como quiser.
 
 
