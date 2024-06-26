@@ -4,7 +4,7 @@
 
 Site discord bem interativo com particulas criado para colocar suas redes sociais e de mais um amigo seu ! 
 
- <img src="https://i.ibb.co/F8m9WTz/Capture.jpg" width="200" /> 
+ <img src="https://i.ibb.co/F8m9WTz/Capture.jpg" width="800" /> 
 
 
 ### 📋 Pré-requisitos
@@ -36,3 +36,8 @@ Site discord bem interativo com particulas criado para colocar suas redes sociai
 * [Tippy.js](https://github.com/atomiks/tippyjs) - Biblioteca de tooltips.
 * [VanillaTilt.js](https://micku7zu.github.io/vanilla-tilt.js/) - Biblioteca de efeitos de inclinação.
 * [Font Awesome](https://github.com/FortAwesome/Font-Awesome) - Biblioteca de ícones.
+
+## 📞 Onde me encontrar?
+
+* `[Discord](https://discord.com/users/497843222245146651)
+*  [Instagram](https://instagram.com/a1mleg)
