@@ -39,5 +39,5 @@ Site discord bem interativo com particulas criado para colocar suas redes sociai
 
 ## 📞 Onde me encontrar?
 
-* `[Discord](https://discord.com/users/497843222245146651)
-*  [Instagram](https://instagram.com/a1mleg)
+* [Discord](https://discord.com/users/497843222245146651)
+* [Instagram](https://instagram.com/a1mleg)
